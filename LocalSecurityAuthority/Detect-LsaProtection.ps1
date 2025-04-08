@@ -17,14 +17,12 @@ try {
         ErrorAction = "SilentlyContinue"
     }
     $Property = Get-ItemProperty @params
-}
-catch {
+} catch {
     throw [System.Management.Automation.ItemNotFoundException] "Failed to retrieve value for $Name with $($_.Exception.Message)"
 }
 
 if ($Property.$Name -eq $Value) {
     exit 0
-}
-else {
+} else {
     exit 1
 }

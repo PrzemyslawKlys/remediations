@@ -25,7 +25,6 @@ $params = @{
 $Property = Get-ItemProperty @params
 if ($Property.$Name -eq $Value) {
     exit 0
-}
-else {
+} else {
     exit 1
 }
